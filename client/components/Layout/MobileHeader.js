@@ -21,7 +21,7 @@ function MobileHeader({ user }) {
   });
 
   return (
-    <Menu fluid borderless widths={4}>
+    <Menu fluid borderless widths={6}>
       <Menu.Item {...common()} href="/" active={isActive("/")}>
         <Icon name="home" size="large" />
       </Menu.Item>
@@ -49,6 +49,13 @@ function MobileHeader({ user }) {
           <Icon name="bell outline" size="large" />
         </div>
       </Menu.Item>
+
+      <Menu.Item {...common()} active={isActive("/freelance")} href="/freelance">
+        <Icon name="dollar sign" size="large"/>
+      </Menu.Item>
+<Menu.Item active={isActive("/tools")} {...common()} href="/tools">
+<Icon name="tasks" size="large"/>
+</Menu.Item>
 
       <Dropdown item icon="bars" direction="left">
         <Dropdown.Menu>
