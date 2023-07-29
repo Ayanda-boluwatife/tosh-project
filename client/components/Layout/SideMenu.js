@@ -37,12 +37,6 @@ function SideMenu({ user: { unreadNotification, email, unreadMessage, username }
       <Grid>
         <MenuRow href="/" menuName="Home" iconName="home" />
 
-        <MenuRow only="mobile tablet" iconName="search" href="/search" />
-
-        <MenuRow iconName="mail outline" menuName="Messages" href="/messages">
-          {unreadMessage ? <div className="menuIconBadge" /> : <></>}
-        </MenuRow>
-
         <MenuRow
           menuName="Notifications"
           iconName="bell outline"
@@ -51,12 +45,26 @@ function SideMenu({ user: { unreadNotification, email, unreadMessage, username }
           {unreadNotification ? <div className="menuIconBadge" /> : <></>}
         </MenuRow>
 
+        <MenuRow iconName="mail outline" menuName="Messages" href="/messages">
+          {unreadMessage ? <div className="menuIconBadge" /> : <></>}
+        </MenuRow>
+
         <MenuRow
           menuName="Account"
           iconName="user"
           href={`/${username}`}
           active={router.query.username === username}
         />
+
+<MenuRow href="/freelance" menuName="Freelance Market" iconName="dollar sign" />
+<MenuRow href="/tools" menuName="Work Management Tool" iconName="tasks" />
+        <MenuRow only="mobile tablet" iconName="search" href="/search" />
+
+        
+
+        
+
+        
 
         <MenuRow
           menuName="Logout"
